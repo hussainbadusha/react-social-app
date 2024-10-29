@@ -58,7 +58,7 @@ export const DataProvider = ({children})=>{
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
     const newPost = { id, title: postTitle, datetime, body: postBody };
     try {
-        const response = await api.post('/posts', newPost);
+        await api.post('/posts', newPost);
         const allPosts = [...posts, newPost];
         setPosts(allPosts);
         setPostTitle('');
